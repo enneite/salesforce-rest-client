@@ -13,6 +13,6 @@ Unit Tests
 ---------
  - Run the command:
 ```bash
-./bin/phpunit ./src/Tests
+./vendor/bin/phpunit ./src/Tests
 ```
 
