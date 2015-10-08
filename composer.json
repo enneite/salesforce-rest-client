@@ -1,0 +1,22 @@
+{
+  "name" : "enneite/salesforce-rest-client",
+  "type" : "library",
+  "description" : "PHP Salesforce Rest Api Client",
+  "licence" : "MIT",
+  "autoload":     {
+    "psr-4": { "Enneite\\SalesforceRestClient\\": "src" }
+  },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/enneite/salesforce-rest-client.git"
+    }
+  ],
+  "require" :  {
+    "php": ">=5.3.3",
+    "guzzle/guzzle": "3.8.1"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~4.2.0"
+  }
+}
