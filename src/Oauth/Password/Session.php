@@ -201,7 +201,7 @@ class Session
         return array(
             'Content-type' => 'application/json',
             'Accept' => 'application/json',
-            'Authorization' => ' '
+            'Authorization' => $this->getTokenType(). ' ' . $this->getAccessToken()
         );
     }
 

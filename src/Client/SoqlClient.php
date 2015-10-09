@@ -48,7 +48,8 @@ class SoqlClient extends AbstractClient
         }
         catch(ClientErrorResponseException $e) {
             if(403 == $e->getResponse()->getStatusCode()) {
-                $this->session = $this->authenticator->connect();
+                $this->reinitSession();
+
                 return $this->query($soql);
             }
             throw $e;

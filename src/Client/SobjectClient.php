@@ -29,6 +29,11 @@ class SobjectClient extends AbstractClient
             $this->session->generatehttpHeaders(),
             json_encode($data)
         );
+
+        $response = $this->httpClient->send($request);
+        $json = $response->json();
+
+        return $json;
     }
 
     /**
@@ -47,7 +52,8 @@ class SobjectClient extends AbstractClient
         }
         catch(ClientErrorResponseException $e) {
             if(403 == $e->getResponse()->getStatusCode()) {
-                $this->session = $this->authenticator->connect();
+                $this->reinitSession();
+
                 return $this->create($sobjectType, $id, $data);
             }
             throw $e;
@@ -70,6 +76,8 @@ class SobjectClient extends AbstractClient
 
         $response = $this->httpClient->send($request);
         $json = $response->json();
+
+        return $json;
     }
 
     /**
@@ -87,7 +95,8 @@ class SobjectClient extends AbstractClient
         }
         catch(ClientErrorResponseException $e) {
             if(403 == $e->getResponse()->getStatusCode()) {
-                $this->session = $this->authenticator->connect();
+                $this->reinitSession();
+
                 return $this->read($sobjectType, $id);
             }
             throw $e;
@@ -108,6 +117,11 @@ class SobjectClient extends AbstractClient
             $this->session->generatehttpHeaders(),
             json_encode($data)
         );
+
+        $response = $this->httpClient->send($request);
+        $json = $response->json();
+
+        return $json;
     }
 
     /**
@@ -126,7 +140,8 @@ class SobjectClient extends AbstractClient
         }
         catch(ClientErrorResponseException $e) {
             if(403 == $e->getResponse()->getStatusCode()) {
-                $this->session = $this->authenticator->connect();
+                $this->reinitSession();
+
                 return $this->update($sobjectType, $id, $data);
             }
             throw $e;
@@ -145,6 +160,11 @@ class SobjectClient extends AbstractClient
             $this->session->getInstanceUrl() . '/sobjects/' . $sobjectType . '/' .$id,
             $this->session->generatehttpHeaders()
         );
+
+        $response = $this->httpClient->send($request);
+        $json = $response->json();
+
+        return $json;
     }
 
     /**
@@ -162,7 +182,8 @@ class SobjectClient extends AbstractClient
         }
         catch(ClientErrorResponseException $e) {
             if(403 == $e->getResponse()->getStatusCode()) {
-                $this->session = $this->authenticator->connect();
+                $this->reinitSession();
+
                 return $this->delete($sobjectType, $id);
             }
             throw $e;
