@@ -4,9 +4,61 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9d92f7bc13b4515d3b5dae9595080caa",
-    "content-hash": "128c50b6499e0e9d77e51a34f0072bc2",
+    "hash": "90e8c901b3c0dc99d76a30ab1ace8c09",
+    "content-hash": "47413f7026443ffd4d5f46c4ea5ec33b",
     "packages": [
+        {
+            "name": "desarrolla2/cache",
+            "version": "v1.8.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/desarrolla2/Cache.git",
+                "reference": "a4fe5e0015b497099613e9cf80f37e445de077a2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/desarrolla2/Cache/zipball/a4fe5e0015b497099613e9cf80f37e445de077a2",
+                "reference": "a4fe5e0015b497099613e9cf80f37e445de077a2",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "predis/predis": "*",
+                "raulfraile/ladybug": "v0.7",
+                "symfony/yaml": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Desarrolla2\\Cache\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniel González",
+                    "homepage": "http://desarrolla2.com/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Provides an cache interface for several adapters (Apc, File, Mongo, Memcached, Mysql, ... )",
+            "homepage": "https://github.com/desarrolla2/Cache/blob/master/README.md",
+            "keywords": [
+                "apc",
+                "cache",
+                "file",
+                "memcached",
+                "mongo",
+                "mysql",
+                "redis"
+            ],
+            "time": "2014-11-06 11:33:50"
+        },
         {
             "name": "guzzle/guzzle",
             "version": "v3.8.1",
