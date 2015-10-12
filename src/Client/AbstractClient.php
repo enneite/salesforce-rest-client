@@ -9,7 +9,7 @@
 namespace Enneite\SalesforceRestClient\Client;
 
 
-use Desarrolla2\Cache\Adapter\AdapterInterface;
+use Desarrolla2\Cache\CacheInterface;
 use Enneite\SalesforceRestClient\Oauth\AuthenticatorInterface;
 
 abstract class AbstractClient
@@ -52,7 +52,7 @@ abstract class AbstractClient
      * @param $session
      * @param $parameters
      */
-    public function __construct($httpClient, AdapterInterface $cache, AuthenticatorInterface $authenticator , array $parameters)
+    public function __construct($httpClient, CacheInterface $cache, AuthenticatorInterface $authenticator , array $parameters)
     {
         $this->httpClient = $httpClient;
         $this->cache = $cache;

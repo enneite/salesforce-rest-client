@@ -25,7 +25,7 @@ class SobjectClient extends AbstractClient
     public function create($sobjectType, $id, $data)
     {
         $request =  $this->httpClient->post(
-            $this->session->getInstanceUrl() . '/sobjects/' . $sobjectType . '/' .$id,
+            $this->session->getInstanceUrl()  . '/' . $this->requestUriPrefix . '/sobjects/' . $sobjectType . '/' .$id,
             $this->session->generatehttpHeaders(),
             json_encode($data)
         );
@@ -69,7 +69,7 @@ class SobjectClient extends AbstractClient
     public function read($sobjectType, $id)
     {
         $request =  $this->httpClient->get(
-            $this->session->getInstanceUrl() . '/sobjects/' . $sobjectType . '/' .$id,
+            $this->session->getInstanceUrl() . '/' . $this->requestUriPrefix . '/sobjects/' . $sobjectType . '/' .$id,
             $this->session->generatehttpHeaders()
         );
 
@@ -113,7 +113,7 @@ class SobjectClient extends AbstractClient
     public function update($sobjectType, $id, $data)
     {
         $request =  $this->httpClient->patch(
-            $this->session->getInstanceUrl() . '/sobjects/' . $sobjectType . '/' .$id,
+            $this->session->getInstanceUrl()  . '/' . $this->requestUriPrefix . '/sobjects/' . $sobjectType . '/' .$id,
             $this->session->generatehttpHeaders(),
             json_encode($data)
         );
@@ -157,7 +157,7 @@ class SobjectClient extends AbstractClient
     public function delete($sobjectType, $id)
     {
         $request =  $this->httpClient->delete(
-            $this->session->getInstanceUrl() . '/sobjects/' . $sobjectType . '/' .$id,
+            $this->session->getInstanceUrl() . '/' . $this->requestUriPrefix . '/sobjects/' . $sobjectType . '/' .$id,
             $this->session->generatehttpHeaders()
         );
 
